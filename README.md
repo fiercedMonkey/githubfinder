@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,25 +12,25 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# Documentation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### React vs. Next.js
+When using Next.js as the underlying technology, you benefit from some features that, unlike plain React, are built right in. For example, routing, code splitting, API routes and image optimization.
+Routing is of course also possible with plain React, but for this, for example, the react-router must be installed separately. Such steps can be avoided by using Next.js directly.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### UI
+This project uses [Material UI](https://mui.com/material-ui/getting-started/overview/).
+Normally I prefer css-modules, gladly also in connection with tailwindcss. This may sound strange at first, but I like to combine the advantages of modules with the shorter code of tailwind (by using the `@apply`-directive).
+For smaller projects like this one, a library like Material UI is sufficient.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Testing
+Jest is used to test the components. Since these are simple components, only snapshot tests are created. For more extensive frontends I would also use Testcafe or Cypress for e2e tests.
 
-## Learn More
+### CI / CD
+Two github actions are performed on each push. On the one hand a simple `npm run lint`, on the other hand the tests are executed.
+Once something is pushed to main, it is automatically deployed to Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+### Deployment
+This project is deployed on [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can visit the deployed version here: [githubfinder](https://githubfinder-fiercedmonkey.vercel.app/)
